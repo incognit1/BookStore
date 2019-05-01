@@ -3,7 +3,8 @@ export default class BookstoreService {
         return [
             {
                 title: 'Test',
-                pages: 235
+                pages: 235,
+                id: 1,
             }
         ];
     }

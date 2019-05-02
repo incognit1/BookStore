@@ -1,12 +1,12 @@
 import React from 'react';
-import BookList from "../../book-list";
+import BookListContainer from './../../../containers/book-list-container';
 
 const HomePage = () => {
     return (
         <div>
             <h2>Home page</h2>
 
-            <BookList/>
+            <BookListContainer/>
         </div>
     );
 };

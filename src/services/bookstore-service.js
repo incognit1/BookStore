@@ -1,6 +1,6 @@
 export default class BookstoreService {
     getBooks() {
-        return [
+        const data = [
             {
                 id: 1,
                 title: 'Идеальный программист. Как стать профессионалом разработки ПО',
@@ -44,5 +44,16 @@ export default class BookstoreService {
                 imageURL: 'https://images-na.ssl-images-amazon.com/images/I/41RYDz9wdqL.jpg',
             },
         ];
+
+        return new Promise((resolve, reject) => {
+            setTimeout(() => {
+
+                if(Math.random() < 0.95) {
+                    resolve(data);
+                } else {
+                    reject(new Error('Error'))
+                }
+            }, 600);
+        })
     }
 }

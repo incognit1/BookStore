@@ -1,9 +1,10 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import {Header$} from "./header";
 
 const Header = () => {
     return (
-        <header>
+        <Header$>
             <div className='logo'>
                 <Link to='/'>
                     <h2>BookStore</h2>
@@ -14,7 +15,7 @@ const Header = () => {
                     <p>5 items ($200)</p>
                 </Link>
             </div>
-        </header>
+        </Header$>
     );
 };
 

@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import withBookStoreService from "../hoc/with-bookstore-service";
 import {booksLoaded} from "../../actions";
 import compose from "../../utils/compose";
+import {Grid} from "../../styles/common";
 
 class BookList extends Component {
     componentDidMount() {
@@ -14,11 +15,13 @@ class BookList extends Component {
     }
 
     render() {
-        return (<div className="book-list">
-            {this.props.books.map(book => {
-                return (<BookListItem key={book.id} book={book}/>)
-            })}
-        </div>)
+        return (
+            <Grid>
+                {this.props.books.map(book => {
+                    return (<BookListItem key={book.id} book={book}/>)
+                })}
+            </Grid>
+            )
     }
 }
 

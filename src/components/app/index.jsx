@@ -17,6 +17,8 @@ const App = () => {
                 <GlobalStyle/>
                 <Header/>
                 <Wrapper margin='90px 0 0 0'>
+                    <CartPage/>
+
                     <Switch>
                         <Route path='/' exact component={HomePage}/>
                         <Route path='/cart' component={CartPage}/>

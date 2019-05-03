@@ -2,7 +2,7 @@ import React from 'react';
 import {Card, CardActions, CardImage, CardTitle} from "../UI/Card";
 import {Button} from "../UI/Button";
 
-const BookListItem = ({book}) => {
+const BookListItem = ({book, onAddedToCart}) => {
     const {title, pages, imageURL, author} = book;
 
     return (
@@ -14,7 +14,7 @@ const BookListItem = ({book}) => {
 
             <CardActions>
                 <div>
-                    <Button primaryColor>Добавить в корзину</Button>
+                    <Button primaryColor onClick={onAddedToCart}>Добавить в корзину</Button>
                 </div>
                 <div>
                     <button>

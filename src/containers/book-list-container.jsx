@@ -3,7 +3,7 @@ import {connect} from "react-redux";
 import BookList from "../components/book-list";
 import ErrorIndicator from "../components/error-indicator";
 import Loader from "../components/loader";
-import {booksError, booksLoaded, booksRequested} from "../actions";
+import {bookAddedToCart, booksError, booksLoaded, booksRequested} from "../actions";
 import withBookStoreService from "../components/hoc/with-bookstore-service";
 import compose from "../utils/compose";
 
@@ -13,7 +13,7 @@ class BookListContainer extends Component {
     }
 
     render() {
-        const {loading, books, error} = this.props;
+        const {loading, books, error, onAddedToCart} = this.props;
 
         if(loading) {
             return <Loader/>;
@@ -24,7 +24,7 @@ class BookListContainer extends Component {
         }
 
         return (
-            <BookList books={books}/>
+            <BookList books={books} onAddedToCart={onAddedToCart}/>
         )
     }
 }
@@ -45,7 +45,8 @@ const mapDispatchToProps = (dispatch, ownProps) => {
                 data => dispatch(booksLoaded(data)),
                 error => dispatch(booksError(error)),
             );
-        }
+        },
+        onAddedToCart: (id) => dispatch(bookAddedToCart(id))
     }
 };
 
